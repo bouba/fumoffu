@@ -1,0 +1,5 @@
+= Fumoffu
+
+Fumoffu is a framework based on JRUBY and Java Swing, which aim to easily create and deploy GUI application.
+
+I just started a month ago so the whole thing is still pretty fresh :).
