@@ -11,6 +11,10 @@ group :development do
   gem "rcov", ">= 0.9.9"
 end
 
+group :test do
+  gem "shoulda"
+end
+
 platforms :jruby do
   gem "ruby-debug", ">= 0.10.3"
 
@@ -28,9 +32,4 @@ platforms :jruby do
   
 #  gem "rawr"
 #  gem "log4r"
-
-  group :test do
-    gem "rspec"
-  end
-
 end

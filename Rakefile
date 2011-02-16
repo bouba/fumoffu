@@ -19,27 +19,28 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{I will make the description later}
   gem.email = "alionel@gmail.com"
   gem.authors = ["Lionel Abderemane"]
+  gem.files = FileList['lib/**/*.rb', 'bin/*', '[A-Z]*', 'test/**/*'].to_a
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
-  gem.add_runtime_dependency 'log4r', '>= 1.1.9'
-  gem.add_runtime_dependency 'rawr', '>= 1.4.5'
-  gem.add_runtime_dependency 'bundler', '>= 1.0.10'
+  #gem.add_runtime_dependency 'log4r', '>= 1.1.9'
+  #gem.add_runtime_dependency 'rawr', '>= 1.4.5'
+  #gem.add_runtime_dependency 'bundler', '>= 1.0.10'
   
-  gem.add_development_dependency 'rspec'
+  gem.add_development_dependency 'shoulda'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
+  test.pattern = 'test/**/*_test.rb'
   test.verbose = true
 end
 
 require 'rcov/rcovtask'
 Rcov::RcovTask.new do |test|
   test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
+  test.pattern = 'test/**/*_test.rb'
   test.verbose = true
 end
 
