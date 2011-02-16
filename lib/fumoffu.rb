@@ -21,7 +21,7 @@ module Fumoffu
     end
     
     def load_generators
-      require File.dirname(__FILE__).concat("/fumoffu/generators/fumoffu_generator")
+      require "fumoffu_generator"
     end
   end
 end

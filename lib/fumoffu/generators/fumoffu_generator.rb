@@ -27,7 +27,7 @@ module Fumoffu
            "test/ruby",
            "test/ruby/spec"
            ]
-         mkdir_p @dir_structure
+         mkdir_p @dir_structure, :verbose => false
        end
      end
   end
