@@ -6,7 +6,7 @@ module Fumoffu
        def self.generate
          # we generate the configuration
          Configuration.generate
-         
+
          # We generate the sources from where it is executed
          @dir_structure = [
            "dist",
@@ -27,11 +27,7 @@ module Fumoffu
            "test/ruby",
            "test/ruby/spec"
            ]
-
-         @dir_structure.each do |new_dir|
-           sh "mkdir #{new_dir}"
-         end
-        
+         mkdir_p @dir_structure
        end
      end
   end

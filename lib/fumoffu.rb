@@ -6,6 +6,10 @@ module Fumoffu
        @@app_dir
     end
     
+    def self.app_dir=new_loc
+       @@app_dir = new_loc
+    end
+    
     def initialize
       load_all
     end
