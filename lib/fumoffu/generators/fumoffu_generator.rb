@@ -1,21 +1,21 @@
-require 'fumoffu_config_generator'
+require File.dirname(__FILE__).concat('/fumoffu_config_generator')
 
 module Fumoffu
   module Generators
-     class FumoffuGenerator
+     class Application
        def self.generate
          # we generate the configuration
-         FumoffuConfigGenerator.generate
+         Configuration.generate
          
          # We generate the sources from where it is executed
          @dir_structure = [
            "dist",
            "lib",
            "lib/java",
-           "lib/ruby"
+           "lib/ruby",
            "log",
            "resources",
-           "resources/medias"
+           "resources/medias",
            "scripts",
            "src",
            "src/java",

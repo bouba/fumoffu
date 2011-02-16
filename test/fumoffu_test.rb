@@ -1,8 +1,5 @@
 require 'helper'
 
-module Fumoffu
-end
-
 class FumoffuTest < Test::Unit::TestCase
   
   context "Generators" do

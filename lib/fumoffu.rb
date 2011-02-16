@@ -1,5 +1,11 @@
 module Fumoffu
   class Application
+    @@app_dir = Dir.pwd
+
+    def self.app_dir
+       @@app_dir
+    end
+    
     def initialize
       load_all
     end

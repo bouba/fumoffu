@@ -1,8 +1,8 @@
 module Fumoffu
   module Generators
-     class FumoffuConfigGenerator
+     class Configuration
        def self.generate
-          source_dir = File.dirname("./",__FILE__)
+          source_dir = File.dirname(__FILE__)
           # We generate the containers
           sh "mkdir config"
           sh "mkdir config/tasks"
