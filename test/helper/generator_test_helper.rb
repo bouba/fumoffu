@@ -4,16 +4,16 @@ require 'rake'
 module FumoffuTestHelper
   class GeneratorHelper < Test::Unit::TestCase
     def setup
-      tmp_dir = Fumoffu::Application.app_dir
       if not File.exist? ("tmp") then
-        sh "mkdir "+tmp_dir+"/tmp"
+        sh "mkdir "+@tmp_dir
       end
-      Dir.chdir tmp_dir+"/tmp"
+      Dir.chdir @tmp_dir
+      @tmp_dir = Fumoffu::Application.app_dir
     end
   
     def teardown
       Dir.chdir ".."
-      sh  "rm -Rf #{Fumoffu::Application.app_dir}/tmp/"
+      sh  "rm -Rf #{@tmp_dir}"
     end
   end
 end

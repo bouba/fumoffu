@@ -2,10 +2,10 @@ module Fumoffu
   module Generators
      class Configuration
        def self.generate
-          source_dir = File.dirname(__FILE__)
+          source_dir = Fumoffu::Application.app_dir
           # We generate the containers
-          sh "mkdir config"
-          sh "mkdir config/tasks"
+          sh "mkdir #{source_dir}/config"
+          sh "mkdir #{source_dir}/config/tasks"
           
           # We include the default files
           sh "cp #{source_dir}/tasks/package.rake config/tasks"
