@@ -6,8 +6,31 @@ source "http://rubygems.org"
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
 group :development do
-  gem "shoulda", ">= 0"
-  gem "bundler", "~> 1.0.0"
+  gem "bundler", "~> 1.0.10"
   gem "jeweler", "~> 1.5.2"
-  gem "rcov", ">= 0"
+  gem "rcov", ">= 0.9.9"
+end
+
+platforms :jruby do
+  gem "ruby-debug", ">= 0.10.3"
+
+#  gem "activerecord-jdbcsqlite3-adapter"
+
+  # This is needed by now to let tests work on JRuby
+  # TODO: When the JRuby guys merge jruby-openssl in
+  # jruby this will be removed
+  gem "jruby-openssl"
+
+#  group :db do
+#    gem "activerecord-jdbcmysql-adapter"
+#    gem "activerecord-jdbcpostgresql-adapter"
+#  end
+  
+#  gem "rawr"
+#  gem "log4r"
+
+  group :test do
+    gem "rspec"
+  end
+
 end
