@@ -1,5 +1,5 @@
 # rcov generated
-coverage
+test/coverage
 
 # rdoc generated
 rdoc

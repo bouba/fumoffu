@@ -27,7 +27,10 @@ module Fumoffu
            "test/ruby",
            "test/ruby/spec"
            ]
-         mkdir_p @dir_structure, :verbose => false
+           
+         @dir_structure.each do |dir|
+           mkdir_p "#{Fumoffu::Application.app_dir}/#{dir}", :verbose => false
+         end
        end
      end
   end

@@ -1,4 +1,4 @@
-require 'helper'
+require File.dirname(__FILE__)+'/helper'
 
 class FumoffuTest < Test::Unit::TestCase
   
@@ -8,6 +8,10 @@ class FumoffuTest < Test::Unit::TestCase
         app = Fumoffu::Application.new
         assert_not_nil app
       end
+    end
+    
+    context "generate" do
+      
     end
   end
 end

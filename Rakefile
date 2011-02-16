@@ -40,8 +40,11 @@ end
 require 'rcov/rcovtask'
 Rcov::RcovTask.new do |test|
   test.libs << 'test'
-  test.pattern = 'test/**/*_test.rb'
+  test.pattern = 'test/fumoffu/**/*_test.rb'
   test.verbose = true
+  test.output_dir = "test/coverage/"
+  test.rcov_opts = %w{-x osx\/objc,gems\/,spec\/ --text-report }
+  
 end
 
 task :default => :test
