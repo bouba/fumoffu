@@ -11,7 +11,13 @@ class FumoffuGeneratorTest < Test::Unit::TestCase
         @dir_structureo = [
           "config",
           "config/tasks",
-          "config/tasks/package.rake"
+          "config/tasks/package.rake",
+          "config/configuration.rb",
+          "config/initializers",
+          "config/initializers/app_classes.rb",
+          "config/initializers/init.rb",
+          "config/initializers/java_classes.rb",
+          "config/initializers/ruby_classes.rb"
          ]
          check_files @dir_structureo, @tmp_dir
       end

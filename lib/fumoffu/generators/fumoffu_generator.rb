@@ -6,13 +6,11 @@ module Fumoffu
        def self.generate
          # we generate the configuration
          Configuration.generate
+         Lib.generate
 
          # We generate the sources from where it is executed
          @dir_structure = [
            "dist",
-           "lib",
-           "lib/java",
-           "lib/ruby",
            "log",
            "resources",
            "resources/medias",

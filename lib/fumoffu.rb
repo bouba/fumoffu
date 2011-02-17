@@ -18,10 +18,15 @@ module Fumoffu
     
     def load_all
       load_generators
+      load_java_mapping
     end
     
     def load_generators
       require "fumoffu_generator"
+    end
+    
+    def load_java_mapping
+      require 'java_mapping'
     end
   end
 end

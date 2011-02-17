@@ -8,7 +8,7 @@ class FumoffuGeneratorTest < Test::Unit::TestCase
       should "successfully generate the full app skeleton" do
         Fumoffu::Generators::Application.generate
         #we check that all the directories have been created
-        @dir_structureo = [
+        @dir_structure = [
           "dist",
           "lib",
           "lib/java",
@@ -19,15 +19,26 @@ class FumoffuGeneratorTest < Test::Unit::TestCase
           "scripts",
           "src",
           "src/java",
+          "src/java/org",
+          "src/java/org/rubyforge",
+          "src/java/org/rubyforge/rawr",
           "src/ruby",
           "src/ruby/app",
-          "src/ruby/config",
+          "src/ruby/app/actions",
+          "src/ruby/app/actions/controllers",
+          "src/ruby/app/actions/handlers",
+          "src/ruby/app/actions/helpers",
+          "src/ruby/app/commons",
+          "src/ruby/app/models",
+          "src/ruby/app/utils",
+          "src/ruby/config", 
+          "src/ruby/config/initializers", 
           "test",
           "test/java",
           "test/ruby",
           "test/ruby/spec"
          ]
-         check_files @dir_structureo, @tmp_dir
+         check_files @dir_structure, @tmp_dir
 
       end
     end
