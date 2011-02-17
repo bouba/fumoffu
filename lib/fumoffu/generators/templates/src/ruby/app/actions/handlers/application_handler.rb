@@ -1,18 +1,19 @@
 include_class 'org.wc.ActionManager'
-include_class 'org.wc.AvailableActions'
+
+#
+# ActionManager is the a Abstract Class which used within the swing
+# UI to handle a actions
+# 
+# In the Fumoffu FrameWork All processed action should go through the ApplicationHandler
+#
 
 class ApplicationHandler < ActionManager
 
   def initialize
     @handlers = Array.new
-    @handlers << MainMenuHandler.new
-    @handlers << SessionsHandler.new
-
-    setup_loggers 'app', [Outputter.stdout, $file_output]
-    
   end
 
-  # java.awt.event.ActionEvent event, String action
+  # java.awt.event.ActionEvent event, String action, Component caller
   def handleAction event, action, caller
     begin
       @handlers.each do |handler|
@@ -20,7 +21,8 @@ class ApplicationHandler < ActionManager
       end
 
     rescue => e
-      $log_main_app.error "Failed to process action: '#{action.to_s}' "+e.backtrace.join("\n")+":\n "+e.inspect
+      # FIXME INTEGRATE THE RUBY LOGGER
+      puts "Failed to process action: '#{action.to_s}' "+e.backtrace.join("\n")+":\n "+e.inspect
     end
     return false
   end

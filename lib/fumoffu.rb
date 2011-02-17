@@ -28,5 +28,6 @@ module Fumoffu
     def load_java_mapping
       require 'java_mapping'
     end
+    
   end
 end

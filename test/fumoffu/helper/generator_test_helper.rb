@@ -14,7 +14,7 @@ module FumoffuTestHelper
     end
 
     def teardown
-      rm_r @tmp_dir, :verbose => false
+      #rm_r @tmp_dir, :verbose => false
     end
 
     def check_files files, app_dir=nil

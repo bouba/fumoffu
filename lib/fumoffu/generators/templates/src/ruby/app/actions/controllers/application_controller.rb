@@ -1,5 +1,2 @@
-class ApplicationController < Controller
-  include Controller::MessageSender
-  include Controller::MessageBuilder
-
+class ApplicationController < Fumoffu::Controller
 end

@@ -3,3 +3,7 @@
 Description goes here.
 
 I just started a month ago so the whole thing is still pretty fresh :).
+
+= Jar dependencies
+
+swing-layout => 1.0.4
