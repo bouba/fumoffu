@@ -19,6 +19,7 @@ module Fumoffu
     def load_all
       load_generators
       load_java_mapping
+      load_utils
     end
     
     def load_generators
@@ -29,5 +30,8 @@ module Fumoffu
       require 'java_mapping'
     end
     
+    def load_utils
+      require 'component_search'
+    end
   end
 end

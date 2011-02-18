@@ -4,9 +4,9 @@ require 'fumoffu_lib_generator'
 
 class FumoffuLibGeneratorTest < Test::Unit::TestCase
     include FumoffuTestHelper::GeneratorHelper
-    context "Generate config skeleton" do
-      should "successfully generate the config skeleton" do
-        Fumoffu::Generators::Configuration.generate
+    context "Generate library skeleton" do
+      should "successfully generate the library skeleton" do
+        Fumoffu::Generators::Lib.generate
         #we check that all the directories have been created
         @dir_structure = [
           "lib",

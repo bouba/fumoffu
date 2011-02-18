@@ -4,8 +4,8 @@ require 'fumoffu_src_generator'
 
 class FumoffuSourceGeneratorTest < Test::Unit::TestCase
     include FumoffuTestHelper::GeneratorHelper
-    context "Generate config skeleton" do
-      should "successfully generate the config skeleton" do
+    context "Generate source skeleton" do
+      should "successfully generate the source skeleton" do
         Fumoffu::Generators::Source.generate
         #we check that all the directories have been created
         @dir_structure = [

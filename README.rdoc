@@ -4,6 +4,28 @@ Description goes here.
 
 I just started a month ago so the whole thing is still pretty fresh :).
 
+== Environment
+
+Make sure you have your JRuby environment loaded, or configure your IDE to points to your jruby installation
+
+On a terminal
+-------------
+To load your JRuby environment in a terminal just make a quick export
+```sh
+export PATH=/your/local/path/jruby-X.X.X/bin:$PATH
+```
+
+On Eclipse
+----------
+
+TODO
+
+On Netbeans
+-----------
+
+TODO
+
 = Jar dependencies
 
 swing-layout => 1.0.4
+
