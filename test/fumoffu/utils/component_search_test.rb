@@ -47,5 +47,12 @@ class FumoffuConfigGeneratorTest < Test::Unit::TestCase
         c = component_child_by_name tested_component , "but2"
         assert c.getName, "but2"
       end
+      
+      should "failed to find the targeted child" do
+        component = my_component
+        tested_component = component.getParent
+        c = component_child_by_name tested_component , "but_not_found"
+        assert_nil c
+      end
     end
 end
