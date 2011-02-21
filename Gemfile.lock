@@ -8,11 +8,9 @@ GEM
       bundler (~> 1.0.0)
       git (>= 1.2.5)
       rake
-    jruby (0.0.1)
     jruby-openssl (0.7.3)
       bouncy-castle-java
     rake (0.8.7)
-    rcov (0.9.9)
     rcov (0.9.9-java)
     ruby-debug (0.10.4)
       columnize (>= 0.1)
@@ -27,7 +25,6 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.0.10)
   jeweler (~> 1.5.2)
-  jruby
   jruby-openssl
   rcov (>= 0.9.9)
   ruby-debug (>= 0.10.3)

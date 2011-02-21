@@ -1,12 +1,13 @@
 require 'rubygems'
 require 'bundler'
 begin
-  Bundler.setup(:default, :development)
+  Bundler.setup(:default, :development, :test)
 rescue Bundler::BundlerError => e
   $stderr.puts e.message
   $stderr.puts "Run `bundle install` to install missing gems"
   exit e.status_code
 end
+
 require 'rake'
 
 require 'jeweler'
@@ -39,11 +40,11 @@ end
 
 require 'rcov/rcovtask'
 Rcov::RcovTask.new do |test|
-  test.libs << 'test'
+  test.libs << 'lib' << 'test'
   test.pattern = 'test/fumoffu/**/*_test.rb'
   test.verbose = true
   test.output_dir = "test/coverage/"
-  test.rcov_opts = %w{-x osx\/objc,gems\/,spec\/ --text-report }
+  test.rcov_opts = %w{-x osx\/objc,gems\/,spec\/,\(eval\) --text-report }
   
 end
 
