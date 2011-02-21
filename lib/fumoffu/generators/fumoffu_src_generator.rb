@@ -9,6 +9,7 @@ module Fumoffu
        
        def self.generate_dirs
          # We generate the containers
+         mkdir_p "#{Fumoffu::Application.app_dir}/src/java", :verbose => false
          mkdir_p "#{Fumoffu::Application.app_dir}/src/ruby/app/actions/helpers", :verbose => false
        end
        

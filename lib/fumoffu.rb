@@ -1,3 +1,8 @@
+# Include local files
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'fumoffu'))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'fumoffu','generators'))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'fumoffu','utils'))
+
 module Fumoffu
   class Application
     @@app_dir = Dir.pwd

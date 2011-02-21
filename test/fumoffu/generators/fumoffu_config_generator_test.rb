@@ -12,6 +12,9 @@ class FumoffuConfigGeneratorTest < Test::Unit::TestCase
           "config",
           "config/tasks",
           "config/tasks/package.rake",
+          "build_configuration.rb",
+          "Gemfile",
+          "Rakefile"
          ]
          check_files @dir_structureo, @tmp_dir
       end

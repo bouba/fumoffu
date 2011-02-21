@@ -9,6 +9,7 @@
 require 'optparse'
 require 'rubygems'
 require 'fumoffu'
+require 'rake'
 options = {}
 
 optparse = OptionParser.new do|opts|
@@ -49,8 +50,7 @@ puts "Logging to file #{options[:logfile]}" if options[:logfile]
 begin
   if options[:install] then
     app = Fumoffu::Application.new
-    Fumoffu::Generators::FumoffuGenerator.generate
-    puts "Hello"
+    Fumoffu::Generators::Application.generate
   end
 end
 #

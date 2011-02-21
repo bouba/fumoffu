@@ -8,6 +8,9 @@ module Fumoffu
           
           # We include the default files
           cp "#{source_dir}/tasks/package.rake", "#{Fumoffu::Application.app_dir}/config/tasks", :verbose => false
+          cp "#{source_dir}/templates/build_configuration.rb", "#{Fumoffu::Application.app_dir}/", :verbose => false
+          cp "#{source_dir}/templates/Gemfile", "#{Fumoffu::Application.app_dir}/", :verbose => false
+          cp "#{source_dir}/templates/Rakefile", "#{Fumoffu::Application.app_dir}/", :verbose => false
        end
      end
   end

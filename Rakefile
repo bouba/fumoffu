@@ -20,7 +20,16 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{I will make the description later}
   gem.email = "alionel@gmail.com"
   gem.authors = ["Lionel Abderemane"]
-  gem.files = FileList['lib/**/*.rb', 'bin/*', '[A-Z]*', 'test/**/*'].to_a
+  gem.files = FileList[
+                        'lib/**/*.rb',
+                        'lib/**/*.java',
+                        'lib/**/*.jar',
+                        'lib/**/*.rake',
+                        'lib/**/Gemfile',
+                        'lib/**/Rakefile',
+                        'bin/*', 
+                        '[A-Z]*', 
+                        'test/**/*'].to_a
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
   #gem.add_runtime_dependency 'log4r', '>= 1.1.9'
