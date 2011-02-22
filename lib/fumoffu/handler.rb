@@ -12,9 +12,5 @@ module Fumoffu
        return false
     end
 
-    # setup the controller before executing an action
-    def before_action controller_id, action
-      @controllers[controller_id].action_name = action
-    end
   end
 end

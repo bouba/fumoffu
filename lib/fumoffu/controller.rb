@@ -1,6 +1,7 @@
 module Fumoffu
   class Controller
     attr_accessor :action_name
+    attr_reader :controller_name
 
     def initialize
       @controller_name = extract_controller_name

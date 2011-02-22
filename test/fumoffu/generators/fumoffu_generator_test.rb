@@ -17,6 +17,8 @@ class FumoffuGeneratorTest < Test::Unit::TestCase
           "resources",
           "resources/medias",
           "scripts",
+          "scripts/package.sh",
+          "scripts/start.sh",
           "src",
           "src/java",
           "src/java/org",

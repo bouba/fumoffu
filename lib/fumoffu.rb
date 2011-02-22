@@ -22,10 +22,10 @@ module Fumoffu
     private
     
     def load_all
-      load_default
       load_generators
       load_java_mapping
       load_utils
+      load_default
     end
 
     def load_default

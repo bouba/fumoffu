@@ -31,12 +31,6 @@ class HandlerTest < Test::Unit::TestCase
          assert_not_nil obj
          assert !obj.handleAction(nil,nil,nil)
        end
-       
-       should "successufully set action name" do
-         obj = SampleHandler.new
-         obj.before_action "sample_controller", "sample_action"
-         assert obj.controllers["sample_controller"].action_name, "sample_action"
-       end
     end
   end
 end

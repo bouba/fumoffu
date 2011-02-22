@@ -21,8 +21,14 @@ Installation
 New project install the gem.
 Then create a new project
 ```sh
-fumoffu -i MyApp
+mkdir MyApp
+cd MyApp
+fumoffu -i
 ```
+
+# Compile the java source and generate the jar that will contain the view
+
+
 
 = Jar dependencies
 

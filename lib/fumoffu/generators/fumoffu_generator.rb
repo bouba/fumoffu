@@ -9,6 +9,8 @@ module Fumoffu
          Lib.generate
          Source.generate
 
+         cp_r "#{File.dirname(__FILE__)}/templates/scripts", "#{Fumoffu::Application.app_dir}/", :verbose => false
+
          # We generate the sources from where it is executed
          @dir_structure = [
            "dist",
