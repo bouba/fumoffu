@@ -1,6 +1,6 @@
 module Fumoffu
   class Handler
-    include ComponentSearch
+    include Fumoffu::Utils::ComponentSearch
   
     def initialize
       @controllers = Hash.new

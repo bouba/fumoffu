@@ -51,6 +51,11 @@ begin
   if options[:install] then
     app = Fumoffu::Application.new
     Fumoffu::Generators::Application.generate
+    # we add the missing gems
+    puts "Installing default packages ..."
+    sh "bundle install"
+    puts "Downloading the last stable jruby jar  ..."
+    sh "rake rawr:get:current-stable-jruby"
   end
 end
 #

@@ -1,18 +1,22 @@
 require 'rubygems'
+require 'bundler'
+begin
+  Bundler.setup(:default, :development, :test, :pkg)
+rescue Bundler::BundlerError => e
+  $stderr.puts e.message
+  $stderr.puts "Run `bundle install` to install missing gems"
+  exit e.status_code
+end
+
 require 'rawr'
 require 'rake'
 require 'rake/clean'
 require 'rake/gempackagetask'
 require 'rake/rdoctask'
 require 'rake/testtask'
-require 'spec/rake/spectask'
+require 'rspec/core/rake_task'
+#require 'spec/rake/spectask'
 require 'yaml'
-
-Rake::GemPackageTask.new(spec) do |p|
-  p.gem_spec = spec
-  p.need_tar = true
-  p.need_zip = true
-end
 
 Rake::RDocTask.new do |rdoc|
   files =['README', 'LICENSE', 'lib/**/*.rb']
@@ -27,9 +31,9 @@ Rake::TestTask.new do |t|
   t.test_files = FileList['test/**/*.rb']
 end
 
-Spec::Rake::SpecTask.new do |t|
-  t.spec_files = FileList['spec/**/*.rb']
-  t.libs << Dir["lib"]
+RSpec::Core::RakeTask.new do |t|
+  t.pattern = 'test/ruby/spec/**/*_spec.rb'
+  t.rspec_opts = nil
 end
 
 # Setup default global constant

@@ -1,4 +1,17 @@
 source "http://rubygems.org"
 
-# Packaging tool
-gem "rawr"
+platforms :jruby do
+  gem "fumoffu"
+  group :development do
+    gem "jruby-openssl"
+  end
+
+  group :pkg do
+    # Packaging tool
+    gem "rawr"
+  end
+
+  group :test do
+    gem "rspec", ">=2.4.0"
+  end
+end

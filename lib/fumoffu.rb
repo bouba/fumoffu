@@ -22,9 +22,15 @@ module Fumoffu
     private
     
     def load_all
+      load_default
       load_generators
       load_java_mapping
       load_utils
+    end
+
+    def load_default
+      require 'controller'
+      require 'handler'
     end
     
     def load_generators

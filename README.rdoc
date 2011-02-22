@@ -15,15 +15,14 @@ To load your JRuby environment in a terminal just make a quick export
 export PATH=/your/local/path/jruby-X.X.X/bin:$PATH
 ```
 
-On Eclipse
-----------
+Installation
+============
 
-TODO
-
-On Netbeans
------------
-
-TODO
+New project install the gem.
+Then create a new project
+```sh
+fumoffu -i MyApp
+```
 
 = Jar dependencies
 

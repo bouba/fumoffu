@@ -1,5 +1,3 @@
-include_class 'org.wc.ActionManager'
-
 #
 # ActionManager is the a Abstract Class which used within the swing
 # UI to handle a actions

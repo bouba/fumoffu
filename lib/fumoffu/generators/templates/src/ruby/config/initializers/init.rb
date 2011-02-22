@@ -1,6 +1,4 @@
 # INITIALIZE THE APP
-require "java"
-
 # IMPORT ALL THE JAVA LIBRARY IN THE PROJECT
 
 require File.dirname(__FILE__)+'/ruby_classes'
