@@ -23,6 +23,7 @@ class FumoffuSourceGeneratorTest < Test::Unit::TestCase
           "src/ruby",
           "src/ruby/app",
           "src/ruby/app/main.rb",
+          "src/ruby/app/setup.rb",
           "src/ruby/app/actions",
           "src/ruby/app/actions/controllers",
           "src/ruby/app/actions/controllers/application_controller.rb",
