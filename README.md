@@ -36,12 +36,12 @@ Fumoffu is a [JRuby][jruby] / Java Swing Framework which enabling users to easil
   _Since I still did put the gem on ruby forge to install it you to download and generate the gem manually to install it_
 
   ```
-  git clone git@github.com:bouba/fumoffu.git     
-  cd fomuffu     
-  bundle install     
-  rake install     
-  cd pkg     
-  gem i fumoffu-0.0.1.gem --local     
+      git clone git@github.com:bouba/fumoffu.git
+      cd fomuffu
+      bundle install
+      rake install
+      cd pkg
+      gem i fumoffu-0.0.1.gem --local
   ```
 
 3. **Setup your project files**
@@ -50,9 +50,9 @@ Fumoffu is a [JRuby][jruby] / Java Swing Framework which enabling users to easil
   Then create a new project
 
   ```
-  mkdir MyApp     
-  cd MyApp     
-  fumoffu -i     
+  mkdir MyApp  
+  cd MyApp  
+  fumoffu -i  
   ```
 
 4. **Setup your IDE**
