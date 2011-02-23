@@ -29,7 +29,9 @@ Fumoffu is a [JRuby][jruby] / Java Swing Framework which enabling users to easil
 
   To load your [JRuby][jruby] environment in a terminal just make a quick export
 
-  ``export PATH=/your/local/path/jruby-X.X.X/bin:$PATH``
+  ```
+      export PATH=/your/local/path/jruby-X.X.X/bin:$PATH
+  ```
 
 2. **Download and setup the Fumoffu gem**
 
@@ -50,9 +52,9 @@ Fumoffu is a [JRuby][jruby] / Java Swing Framework which enabling users to easil
   Then create a new project
 
   ```
-  mkdir MyApp  
-  cd MyApp  
-  fumoffu -i  
+      mkdir MyApp
+      cd MyApp
+      fumoffu -i
   ```
 
 4. **Setup your IDE**
@@ -73,11 +75,11 @@ Fumoffu is a [JRuby][jruby] / Java Swing Framework which enabling users to easil
 
 To package your application first you need to create a jar of all the bundled
 
-```sh
-bundle install lib/ruby  
-rake pkg:rawr:bundle_jar  
-rake rawr:jar  
-rake rawr:bundle_app  
+```
+    bundle install lib/ruby
+    rake pkg:rawr:bundle_jar
+    rake rawr:jar
+    rake rawr:bundle_app
 ```
 
 Then configure the rake file in config/tasks/package.rake
