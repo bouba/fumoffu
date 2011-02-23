@@ -1,9 +1,10 @@
 require "rubygems"
 
+
 BUILD_DIR="build" # the directory used for the compilation
 TARGET_DIRS=[ "lib", "config"] # The list of folders containing the sources that require compilation
-GEM_DIR="<THE LOCATION OF THE GEM DIRECTORY THAT YOU NEED TO COMPILE>"
-JRUBY_COMPLETE="<THE LOCATION OF THE JRUBY-COMPLETE JAR>"
+GEM_DIR="#{ROOT_DIR}/lib/ruby/jruby/1.8/gems"
+JRUBY_COMPLETE="#{ROOT_DIR}/lib/java/jruby-complete.jar"
 
 def create_dir dir
   if File.exist?(dir) then 
@@ -26,32 +27,6 @@ def setup_other_files dir
 end
 
 namespace :pkg do
-  desc "create the package"
-  task "create" do
-    # we setup the building directory
-    create_dir BUILD_DIR
-    # we compile the sources
-    TARGET_DIRS.each do |target|
-      sh "jrubyc #{target} -t #{BUILD_DIR}"
-    end
-
-    # we copy the resources and dependencies
-    setup_other_files BUILD_DIR
-    
-    if not ENV["compile_gems"].nil? and ENV["compile_gems"] == "true" then
-      # compile vendor dependencies
-      puts "Compiling vendor"
-      current_dir = Dir.pwd
-      Dir.foreach(GEM_DIR) do |d| 
-        gem_name = d.scan(/(\w+\-\w*|\w+)-.d*/).to_s
-        Dir.chdir(GEM_DIR+"/"+d) do
-          sh "jrubyc lib -t #{current_dir}/#{BUILD_DIR}"
-        end unless [".", "..", ".DS_Store"].include? d
-      end
-      puts "Done"
-    end
-  end
-
   namespace :rawr do
     desc "create gems bundle pacakage"
     task "bundle_jar" do
@@ -60,26 +35,21 @@ namespace :pkg do
 
       # compile vendor dependencies
       puts "Compiling vendor"
-      current_dir = Dir.pwd
+      current_dir = ROOT_DIR
       Dir.foreach(GEM_DIR) do |d| 
-        gem_name = d.scan(/(\w+\-\w*|\w+)-.d*/).to_s
         Dir.chdir(GEM_DIR+"/"+d) do
+          puts "Dir: "+d
           sh "jrubyc lib -t #{current_dir}/#{BUILD_DIR}"
         end unless [".", "..", ".DS_Store"].include? d
       end
       puts "Done"
 
-      create_dir "dist"
-      create_dir "dist/jar"
-      create_dir "dist/jar/lib"
-      create_dir "dist/jar/lib/java/generated"
-
       # we create the jar in the package dir
-      dependencies = "dist/jar/lib/java/generated/"
+      dependencies = "#{ROOT_DIR}/lib/java/generated/"
 
       puts "Create the bundled gem jar"
       sh "jar cvf bundled_gems.jar -C #{BUILD_DIR} ."
-      sh "cp bundled_gems.jar #{dependencies}"
+      sh "mv bundled_gems.jar #{dependencies}"
       #sh "cp #{JRUBY_COMPLETE} #{dependencies}"
       puts "Done ..."
     end

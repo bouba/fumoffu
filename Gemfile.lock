@@ -1,16 +1,25 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    bouncy-castle-java (1.5.0145.2)
+    columnize (0.3.2)
     git (1.2.5)
     jeweler (1.5.2)
       bundler (~> 1.0.0)
       git (>= 1.2.5)
       rake
+    jruby-openssl (0.7.3)
+      bouncy-castle-java
     rake (0.8.7)
-    rcov (0.9.9)
+    rcov (0.9.9-java)
+    ruby-debug (0.10.4)
+      columnize (>= 0.1)
+      ruby-debug-base (~> 0.10.4.0)
+    ruby-debug-base (0.10.4-java)
     shoulda (2.11.3)
 
 PLATFORMS
+  java
   ruby
 
 DEPENDENCIES

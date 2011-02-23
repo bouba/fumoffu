@@ -1,37 +1,29 @@
-require 'fumoffu_config_generator'
+Dir[File.dirname(__FILE__).concat("/*.rb")].each {|file| require file }
 
 module Fumoffu
   module Generators
-     class FumoffuGenerator
+     class Application
        def self.generate
          # we generate the configuration
-         FumoffuConfigGenerator.generate
-         
+         Configuration.generate
+         Lib.generate
+         Source.generate
+
+         cp_r "#{File.dirname(__FILE__)}/templates/scripts", "#{Fumoffu::Application.app_dir}/", :verbose => false
+
          # We generate the sources from where it is executed
          @dir_structure = [
            "dist",
-           "lib",
-           "lib/java",
-           "lib/ruby"
            "log",
-           "resources",
-           "resources/medias"
+           "resources/medias",
            "scripts",
-           "src",
-           "src/java",
-           "src/ruby",
-           "src/ruby/app",
-           "src/ruby/config",
-           "test",
            "test/java",
-           "test/ruby",
            "test/ruby/spec"
            ]
-
-         @dir_structure.each do |new_dir|
-           sh "mkdir #{new_dir}"
+           
+         @dir_structure.each do |dir|
+           mkdir_p "#{Fumoffu::Application.app_dir}/#{dir}", :verbose => false
          end
-        
        end
      end
   end

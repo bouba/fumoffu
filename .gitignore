@@ -1,5 +1,5 @@
 # rcov generated
-coverage
+test/coverage
 
 # rdoc generated
 rdoc
@@ -13,6 +13,11 @@ doc
 
 # jeweler generated
 pkg
+
+tmp
+
+# bundle
+vendor
 
 # Have editor/IDE/OS specific files you need to ignore? Consider using a global gitignore: 
 #
