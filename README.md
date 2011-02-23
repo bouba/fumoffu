@@ -21,7 +21,7 @@ Fumoffu is a [JRuby][jruby] / Java Swing Framework which enabling users to easil
 
 ## Installation
 
-1.   **Setup your [JRuby][jruby] environment**
+-   **Setup your [JRuby][jruby] environment**
 
     _First download and install [JRuby][jruby] if do not have it_  
 __On a terminal__  
@@ -29,7 +29,7 @@ To load your [JRuby][jruby] environment in a terminal just make a quick export
 
       export PATH=/your/local/path/jruby-X.X.X/bin:$PATH
 
-+   **Download and setup the Fumoffu gem**
+-   **Download and setup the Fumoffu gem**
 
   _Since I still did put the gem on ruby forge to install it you to download and generate the gem manually to install it_
 
@@ -42,7 +42,7 @@ To load your [JRuby][jruby] environment in a terminal just make a quick export
       gem i fumoffu-0.0.1.gem --local
 
 
-+   **Setup your project files**
+-   **Setup your project files**
 
     New project install the gem.  
 Then create a new project
@@ -51,7 +51,7 @@ Then create a new project
       cd MyApp
       fumoffu -i
 
-+   **Setup your IDE**
+-   **Setup your IDE**
 
   Currently this step is still in my opinion it is still way too complicated to do.  
 (I personally use Netbeans.)  
