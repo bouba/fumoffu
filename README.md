@@ -35,7 +35,7 @@ To load your [JRuby][jruby] environment in a terminal just make a quick export
 
 
         git clone git://github.com/bouba/fumoffu.git
-        cd fomuffu
+        cd fumoffu
         bundle install
         rake install
         cd pkg
