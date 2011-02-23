@@ -28,6 +28,18 @@ fumoffu -i
 
 # Compile the java source and generate the jar that will contain the view
 
+Packaging
+=========
+
+To package your application first you need to create a jar of all the bundled
+```sh
+bundle install lib/ruby
+rake pkg:rawr:bundle_jar
+rake rawr:jar
+rake rawr:bundle_app
+```
+
+Then configure the rake file in config/tasks/package.rake
 
 
 = Jar dependencies

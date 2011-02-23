@@ -23,6 +23,8 @@ APP_ENV ||= "development"
 # LOAD Default class dirs
 # 
 ####################################################################
+$LOAD_PATH << "lib" # Adding rubygems classes
+
 [
   "utils",
   "commons",

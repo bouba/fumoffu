@@ -1,14 +1,21 @@
 require 'rubygems'
-require 'bundler'
-begin
-  Bundler.setup(:default, :development, :test, :pkg)
-rescue Bundler::BundlerError => e
-  $stderr.puts e.message
-  $stderr.puts "Run `bundle install` to install missing gems"
-  exit e.status_code
+
+# FIXME Fix the class conflict between rawr bundler and bundler we currently cannot use both at the same time
+PACKAGE = false
+
+if PACKAGE then
+  require 'rawr'
+else
+  require 'bundler'
+  begin
+    Bundler.setup(:default, :development, :test, :pkg)
+  rescue Bundler::BundlerError => e
+    $stderr.puts e.message
+    $stderr.puts "Run `bundle install` to install missing gems"
+    exit e.status_code
+  end
 end
 
-require 'rawr'
 require 'rake'
 require 'rake/clean'
 require 'rake/gempackagetask'

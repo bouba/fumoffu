@@ -37,7 +37,7 @@ configuration do |c|
   # A list of individual Java library files to include.
   # default value: []
   #
-  c.java_lib_files = ["lib/java/generated/bundled_gems.jar", "lib/java/jruby-complete.jar", "lib/java/swing-layout-1.0.4.jar", "lib/java/AbsoluteLayout.jar"]
+  c.java_lib_files = ["lib/java/generated/bundled_gems.jar", "lib/java/jruby-complete.jar", "lib/java/swing-layout.jar", "lib/java/AbsoluteLayout.jar"]
 
   # A list of directories for rawr to include . All files in the given directories get bundled up.
   # default value: ["lib/java"]
