@@ -29,7 +29,7 @@ To load your [JRuby][jruby] environment in a terminal just make a quick export
 
       export PATH=/your/local/path/jruby-X.X.X/bin:$PATH
 
-      +   **Download and setup the Fumoffu gem**
+  +   **Download and setup the Fumoffu gem**
 
   _Since I still did put the gem on ruby forge to install it you to download and generate the gem manually to install it_
 
