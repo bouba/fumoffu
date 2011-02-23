@@ -33,12 +33,13 @@ To load your [JRuby][jruby] environment in a terminal just make a quick export
 
     _Since I still did put the gem on ruby forge to install it you to download and generate the gem manually to install it_  
 
-      git clone git@github.com:bouba/fumoffu.git
-      cd fomuffu
-      bundle install
-      rake install
-      cd pkg
-      gem i fumoffu-0.0.1.gem --local
+
+        git clone git@github.com:bouba/fumoffu.git
+        cd fomuffu
+        bundle install
+        rake install
+        cd pkg
+        gem i fumoffu-0.0.1.gem --local
 
 
 -   **Setup your project files**
