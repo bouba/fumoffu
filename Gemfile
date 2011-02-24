@@ -2,12 +2,12 @@ source "http://rubygems.org"
 
 platforms :jruby do
   gem "ruby-debug", ">= 0.10.3"
+  gem "bundler", "~> 1.0.10"
+  gem "jeweler", "~> 1.5.2"
 
   #  gem "activerecord-jdbcsqlite3-adapter"
 
   group :development do
-    gem "bundler", "~> 1.0.10"
-    gem "jeweler", "~> 1.5.2"
   end
   # This is needed by now to let tests work on JRuby
   # TODO: When the JRuby guys merge jruby-openssl in

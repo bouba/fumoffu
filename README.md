@@ -4,8 +4,9 @@ Lionel Abderemane aka Bouba
 
 http://github.com/bouba/fumoffu
 
-I just started a month ago so the whole thing is still pretty fresh and unstable ^_^.
-So I hope you will be able to enjoy it. But do not worry, I will be documenting the project progressively.
+I just started a month ago so the whole thing is still pretty fresh and VERY unstable ^_^.
+
+So I hope you will be able to enjoy it. I will try may best documenting the project progressively.
 
 ## Description
 
@@ -16,6 +17,9 @@ Fumoffu is a [JRuby][jruby] / Java Swing Framework which enabling users to easil
 * Develop a cross-platform UI (Windows, OSX, Linux)
 * Easily and quickly package and deploy the application
 * Easily setup the development environment
+
+You can see a tutorial of a sample application made with this framework [here](http://github.com/bouba/fumoffu_example).
+
 
 * * *
 
@@ -39,7 +43,7 @@ To load your [JRuby][jruby] environment in a terminal just make a quick export
         bundle install
         rake install
         cd pkg
-        ®gem i fumoffu-0.0.1.gem --local
+        gem i fumoffu-0.0.1.gem --local
 
 
 -   **Setup your project files**
@@ -50,6 +54,10 @@ Then create a new project
       mkdir MyApp
       cd MyApp
       fumoffu -i
+
+   Switch the boolean in the rake file to enable the rawr tasks then execute
+
+      rake rawr:get:current-stable-jruby
 
 -   **Setup your IDE**
 
@@ -75,7 +83,7 @@ To package your application first you need to create a jar of all the bundled
     bundle install lib/ruby
     rake pkg:rawr:bundle_jar
     rake rawr:jar
-    rake rawr:bundle_app
+    rake rawr:bundle:app
 
 
 Then configure the rake file in config/tasks/package.rake

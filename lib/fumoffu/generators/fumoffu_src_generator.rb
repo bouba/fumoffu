@@ -11,6 +11,7 @@ module Fumoffu
          # We generate the containers
          mkdir_p "#{Fumoffu::Application.app_dir}/src/java", :verbose => false
          mkdir_p "#{Fumoffu::Application.app_dir}/src/ruby/app/actions/helpers", :verbose => false
+         mkdir_p "#{Fumoffu::Application.app_dir}/src/ruby/app/commons", :verbose => false 
        end
        
        
