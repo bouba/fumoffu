@@ -32,13 +32,12 @@ class FumoffuSourceGeneratorTest < Test::Unit::TestCase
           "src/ruby/app/actions/helpers",
           "src/ruby/app/commons",
           "src/ruby/app/models",
-          "src/ruby/app/utils",
-          "src/ruby/config/configuration.rb",
-          "src/ruby/config/initializers",
-          "src/ruby/config/initializers/app_classes.rb",
-          "src/ruby/config/initializers/init.rb",
-          "src/ruby/config/initializers/java_classes.rb",
-          "src/ruby/config/initializers/ruby_classes.rb"
+          "src/ruby/system/configuration.rb",
+          "src/ruby/system/initializers",
+          "src/ruby/system/initializers/app_classes.rb",
+          "src/ruby/system/initializers/init.rb",
+          "src/ruby/system/initializers/java_classes.rb",
+          "src/ruby/system/initializers/ruby_classes.rb"
          ]
          check_files @dir_structure, @tmp_dir
       end
