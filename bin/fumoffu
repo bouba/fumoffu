@@ -10,7 +10,10 @@ require 'optparse'
 require 'rubygems'
 require 'fumoffu'
 require 'rake'
+
+
 options = {}
+bundle_format = [:jar, :exe, :app]
 
 optparse = OptionParser.new do|opts|
   # Set a banner, displayed at the top
@@ -31,6 +34,12 @@ optparse = OptionParser.new do|opts|
   options[:logfile] = nil
   opts.on( '-l', '--logfile FILE', 'Write log to FILE' ) do|file|
     options[:logfile] = file
+  end
+
+  options[:bundle] = nil
+  opts.on("-b", "--bundle [BUNDLE]", bundle_format,
+          "Bundle the application to the chosen format (jar, exe, app)") do |format|
+         options[:bundle] = format
   end
 
   # This displays the help screen, all programs are
@@ -54,7 +63,23 @@ begin
     # we add the missing gems
     puts "Installing default packages ..."
     sh "bundle install"
+    exit
   end
+  
+  if not options[:bundle].nil? 
+    if bundle_format.include? options[:bundle].to_sym then
+      task = nil
+      if options[:bundle] == :jar
+        task = "rawr:jar"
+      else
+        task = "rawr:bundle:#{options[:bundle]}"
+      end
+      sh "rake -f #{File.dirname(__FILE__)}/../tasks/rawr_bundle.rake #{task}"
+      exit
+    end
+  end
+  
+  puts "Invalid command line."
 end
 #
 # Sample to handle argument
