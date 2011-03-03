@@ -18,11 +18,4 @@ platforms :jruby do
     gem "rcov", ">= 0.9.9"
     gem "shoulda"
   end
-  #  group :db do
-  #    gem "activerecord-jdbcmysql-adapter"
-  #    gem "activerecord-jdbcpostgresql-adapter"
-  #  end
-
-  #  gem "rawr"
-  #  gem "log4r"
 end

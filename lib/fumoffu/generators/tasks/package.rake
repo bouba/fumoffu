@@ -26,10 +26,10 @@ def setup_other_files dir
   sh "cp scripts/start.sh #{dir}/start.sh"
 end
 
-namespace :pkg do
-  namespace :rawr do
+namespace :fumoffu do
+  namespace :bundler do
     desc "create gems bundle pacakage"
-    task "bundle_jar" do
+    task "jar" do
       # we setup the building directory
       create_dir BUILD_DIR
 
@@ -53,15 +53,8 @@ namespace :pkg do
       #sh "cp #{JRUBY_COMPLETE} #{dependencies}"
       puts "Done ..."
     end
-    
-    desc "Add files conf,image ..."
-    task "add_files" do
-      setup_other_files "dist/jar"
-    end
   end
-  
-  
-  
+
   desc "Clean the build dir"
   task "clean" do
     puts "Cleaning up the build directory"

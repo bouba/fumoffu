@@ -20,20 +20,12 @@ optparse = OptionParser.new do|opts|
   # of the help screen.
   opts.banner = "Usage: fumoffu [options] dir_name"
 
-  # Define the options, and what they do
-  options[:verbose] = false
-  opts.on( '-v', '--verbose', 'Output more information' ) do
-    options[:verbose] = true
-  end
 
   options[:install] = false
-  opts.on( '-i', '--install', 'Install the skeleton of the fumoffu App' ) do
+  options[:project_dir] = nil
+  opts.on( '-i', '--install [FILE]', 'Install the skeleton of the fumoffu App' ) do |file|
     options[:install] = true
-  end
-
-  options[:logfile] = nil
-  opts.on( '-l', '--logfile FILE', 'Write log to FILE' ) do|file|
-    options[:logfile] = file
+    options[:project_dir] = file
   end
 
   options[:bundle] = nil
@@ -52,12 +44,11 @@ end
 
 optparse.parse!
 
-puts "Being verbose" if options[:verbose]
-puts "Being quick" if options[:quick]
-puts "Logging to file #{options[:logfile]}" if options[:logfile]
-
 begin
   if options[:install] then
+    if not options[:project_dir].nil? then
+      sh "mkdir #{options[:project_dir]} & cd #{options[:project_dir]}"
+    end
     app = Fumoffu::Application.new
     Fumoffu::Generators::Application.generate
     # we add the missing gems
