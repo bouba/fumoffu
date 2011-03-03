@@ -24,7 +24,7 @@ Jeweler::Tasks.new do |gem|
                         'lib/**/*.rb',
                         'lib/**/*.java',
                         'lib/**/*.jar',
-                        'lib/*.rake',
+                        'lib/**/*.rake',
                         'lib/**/*.sh',
                         'lib/**/Gemfile',
                         'lib/**/Rakefile',

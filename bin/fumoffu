@@ -23,9 +23,9 @@ optparse = OptionParser.new do|opts|
 
   options[:install] = false
   options[:project_dir] = nil
-  opts.on( '-i', '--install [FILE]', 'Install the skeleton of the fumoffu App' ) do |file|
+  opts.on( '-i', '--install [FILE]', 'Install the skeleton of the fumoffu App' ) do |dir|
     options[:install] = true
-    options[:project_dir] = file
+    options[:project_dir] = dir
   end
 
   options[:bundle] = nil
@@ -46,14 +46,20 @@ optparse.parse!
 
 begin
   if options[:install] then
+    project_dir = "."
     if not options[:project_dir].nil? then
-      sh "mkdir #{options[:project_dir]} & cd #{options[:project_dir]}"
+      project_dir = options[:project_dir]
+      mkdir_p project_dir
+      Fumoffu::Application.app_dir = project_dir
     end
+    
     app = Fumoffu::Application.new
     Fumoffu::Generators::Application.generate
     # we add the missing gems
     puts "Installing default packages ..."
-    sh "bundle install"
+    Dir.chdir project_dir do 
+      sh "bundle install"
+    end
     exit
   end
   
