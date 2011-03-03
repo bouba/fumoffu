@@ -9,9 +9,5 @@ class FumoffuTest < Test::Unit::TestCase
         assert_not_nil app
       end
     end
-    
-    context "generate" do
-      
-    end
   end
 end
