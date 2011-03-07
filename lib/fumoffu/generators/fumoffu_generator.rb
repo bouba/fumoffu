@@ -4,18 +4,13 @@ module Fumoffu
   module Generators
      class Application
 
-       public
-       def self.template_dir
-         "#{File.dirname(__FILE__)}/templates"
-       end
-
        def self.generate
          # we generate the configuration
          Configuration.generate
          Lib.generate
          Source.generate
 
-         cp_r "#{Fumoffu::Generators::Application.template_dir}/scripts", "#{Fumoffu::Application.app_dir}/", :verbose => false
+         cp_r "#{File.dirname(__FILE__)}/templates/scripts", "#{Fumoffu::Application.app_dir}/", :verbose => false
 
          # We generate the sources from where it is executed
          @dir_structure = [
