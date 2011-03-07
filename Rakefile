@@ -28,6 +28,7 @@ Jeweler::Tasks.new do |gem|
                         'lib/**/*.sh',
                         'lib/**/Gemfile',
                         'lib/**/Rakefile',
+                        'lib/**/*.erb',
                         "tasks/*.rake",
                         'bin/*', 
                         '[A-Z]*', 
@@ -37,7 +38,6 @@ Jeweler::Tasks.new do |gem|
   #gem.add_runtime_dependency 'log4r', '>= 1.1.9'
   #gem.add_runtime_dependency 'rawr', '>= 1.4.5'
   #gem.add_runtime_dependency 'bundler', '>= 1.0.10'
-  
   gem.add_development_dependency 'shoulda'
 end
 Jeweler::RubygemsDotOrgTasks.new
