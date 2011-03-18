@@ -1,5 +1,7 @@
 # ================================
 # IMPORT ALL JAVA CLASS USED IN THE PROJECT
+# This is the UI Jar
+# require  '/path/to/UI/MyApp.jar'
 
 # Mandatory Classes
 include_class 'org.github.bouba.fumoffu.UIActions'

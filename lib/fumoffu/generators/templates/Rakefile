@@ -38,11 +38,15 @@ Rake::TestTask.new do |t|
   t.test_files = FileList['test/**/*.rb']
 end
 
-RSpec::Core::RakeTask.new do |t|
-  t.pattern = 'test/ruby/spec/**/*_spec.rb'
-  t.rspec_opts = nil
-end
+#RSpec::Core::RakeTask.new do |t|
+#  t.pattern = 'test/ruby/spec/**/*_spec.rb'
+#  t.rspec_opts = nil
+#end
 
+desc "Launch rspec tests"
+task :spec do
+  sh "jruby -S spec test/ruby/spec/ -c"
+end
 # Setup default global constant
 env ||= ENV['env']
 env = "development" unless env

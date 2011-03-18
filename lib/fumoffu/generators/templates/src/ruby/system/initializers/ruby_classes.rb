@@ -8,5 +8,7 @@ require 'fumoffu/handler'
 require "java"
 
 #LOG
+require 'logger'
+
 # CONFIGURATION FILE
 require 'yaml'

@@ -61,4 +61,14 @@ namespace :fumoffu do
     sh "rm -Rf #{BUILD_DIR}/"
     puts "Done ..."
   end
+
+  desc "Install external dependencies"
+  task "install" do
+    puts "Install the PDF utility for Mac OSX"
+    sh "curl -O http://wkhtmltopdf.googlecode.com/files/wkhtmltopdf-0.9.9-OS-X.i368"
+    mkdir_p "resources/tools"
+    sh "mv wkhtmltopdf-0.9.9-OS-X.i368 resources/tools/wkhtmltopdf"
+    sh "chmod +x resources/tools/wkhtmltopdf"
+    puts "Done ..."
+  end
 end

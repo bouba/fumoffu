@@ -7,5 +7,5 @@ package org.github.bouba.fumoffu;
  * @author bouba
  */
 abstract public class ActionManager {
-    abstract public void handleAction(java.awt.event.ActionEvent event, UIActions action, java.awt.Component caller);
+    abstract public void handleAction(java.awt.event.ActionEvent event, UIActions action, java.awt.Component outputContainer);
 }

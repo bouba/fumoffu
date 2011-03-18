@@ -80,9 +80,9 @@ _I think will make a video or something regarding the IDE setup, until I script 
 To package your application first you need to create a jar of all the bundled
 
 
-    bundle install lib/ruby
-    rake pkg:rawr:bundle_jar
-    rake rawr:jar
+    bundle install --path lib/ruby
+    rake fumoffu:bundler:jar
+    fumoffu -b jar
     rake rawr:bundle:app
 
 

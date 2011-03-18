@@ -66,6 +66,11 @@ begin
   if not options[:bundle].nil? 
     if bundle_format.include? options[:bundle].to_sym then
       task = nil
+      # we check if the jruby jar is in the libs if not we download it
+      if not File.exist? Fumoffu::Application.app_dir+"/lib/java/jruby-complete.jar" then
+        puts "We download the last stable version of jruby-complete jar..."
+        sh "rake -f #{File.dirname(__FILE__)}/../tasks/rawr_bundle.rake rawr:get:current-stable-jruby"
+      end
       if options[:bundle] == :jar
         task = "rawr:jar"
       else

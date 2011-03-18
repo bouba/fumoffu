@@ -11,11 +11,11 @@ class ApplicationHandler < ActionManager
     @handlers = Array.new
   end
 
-  # java.awt.event.ActionEvent event, String action, Component caller
-  def handleAction event, action, caller
+  # java.awt.event.ActionEvent event, String action, Component output container
+  def handleAction event, action, output_container
     begin
       @handlers.each do |handler|
-        return true unless not handler.handleAction(event, action, caller)
+        return true unless not handler.handleAction(event, action, output_container)
       end
 
     rescue => e

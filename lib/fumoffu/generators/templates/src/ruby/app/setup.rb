@@ -3,16 +3,17 @@
 # SETUP THE APPLICATION ROOT DIR
 #
 ####################################################################
+require 'pathname'
 
-dir = "#{File.dirname(__FILE__)}".scan(/(.*)\/\w+.jar\!/)
+dir = "#{Pathname.new(__FILE__).dirname}".scan(/(.*)\/\w+.jar\!/)
 if dir.size > 0 then
   IS_FROM_JAR = true
-  ROOT_DIR = dir
+  ROOT_DIR = dir[0][0].scan(/file:(.+)/)[0][0]
 else
   IS_FROM_JAR = false
-  ROOT_DIR = "#{File.dirname(__FILE__)}/../../../"
+  ROOT_DIR = "#{Pathname.new(__FILE__).dirname}/../../../"
 end
-
+puts "ROOT_DIR: #{ROOT_DIR}"
 ### Setup the application running environment
 
 APP_ENV ||= "development"
@@ -41,5 +42,5 @@ end
 # Application Initializer
 # 
 ####################################################################
-require File.dirname(__FILE__)+'/../config/initializers/init'
-require File.dirname(__FILE__)+"/../config/configuration"
+require File.dirname(__FILE__)+'/../system/initializers/init'
+require File.dirname(__FILE__)+"/../system/configuration"

@@ -7,7 +7,7 @@ def update_name name, ref_name
     # if it has no controller at the end of the name add it
     split_name << ref_name.downcase
   end
-  
+
   # update the name to class name standard
   split_name.join("_")
 end
@@ -31,17 +31,17 @@ namespace :fumoffu do
   namespace :generate do
     desc "Generate controller."
     task :controller, :controller_name do |c,args|
-      name = generate_name "controller",args[:controller_name] 
+      name = generate_name "controller",args[:controller_name]
 
       file_content = "class #{name.split("_").collect{|n|n.capitalize!}.join} < ApplicationController\nend"
 
       generate_file name, "#{Fumoffu::Application.app_dir}/src/ruby/app/actions/controllers", file_content
       puts "The new controller #{name} has been generated."
     end
-    
+
     desc "Generate handler"
     task :handler, :handler_name do |h,args|
-      name = generate_name "handler",args[:handler_name] 
+      name = generate_name "handler",args[:handler_name]
 
       file_content = "class #{name.split("_").collect{|n|n.capitalize!}.join} < Fumoffu::Handler\n"
       file_content<< "    def initialize\n"
@@ -57,7 +57,7 @@ namespace :fumoffu do
       file_content<< "      return false\n"
       file_content<< "    end\n"
       file_content<< "end\n"
-      
+
       generate_file name, "#{Fumoffu::Application.app_dir}/src/ruby/app/actions/handlers", file_content
       puts "The new handler #{name} has been generated."
     end
