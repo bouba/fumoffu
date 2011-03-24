@@ -11,6 +11,12 @@ class ApplicationHandler < ActionManager
     @handlers = Array.new
   end
 
+  # this method should be called right after the interface is done 
+  # with the initialization
+  def loadEngine
+    # Do stuff
+  end
+
   # java.awt.event.ActionEvent event, String action, Component output container
   def handleAction event, action, output_container
     begin

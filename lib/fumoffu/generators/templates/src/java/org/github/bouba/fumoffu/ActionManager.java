@@ -7,5 +7,6 @@ package org.github.bouba.fumoffu;
  * @author bouba
  */
 abstract public class ActionManager {
-    abstract public void handleAction(java.awt.event.ActionEvent event, UIActions action, java.awt.Component outputContainer);
+    abstract public void loadEngine(); // This method should be called right after the interface has been initialized
+    abstract public void handleAction(Object event, UIActions action, java.awt.Component outputContainer);
 }
