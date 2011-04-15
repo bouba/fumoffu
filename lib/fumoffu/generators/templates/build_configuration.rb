@@ -12,7 +12,7 @@ configuration do |c|
   # The main ruby file to invoke, minus the .rb extension
   # default value: "main"
   #
-  c.main_ruby_file = "app/main"
+  c.main_ruby_file = "main"
 
   # The fully-qualified name of the main Java file used to initiate the application.
   # default value: "org.rubyforge.rawr.Main"
@@ -22,7 +22,7 @@ configuration do |c|
   # A list of directories where source files reside
   # default value: ["src"]
   #
-  c.source_dirs = ["src/ruby", "src/java","resources"]
+  c.source_dirs = ["engine/src", "engine/config", "interface/src"]
 
   # A list of regexps of files to exclude
   # default value: []
@@ -37,7 +37,7 @@ configuration do |c|
   # A list of individual Java library files to include.
   # default value: []
   #
-  c.java_lib_files = ["lib/java/generated/bundled_gems.jar", "lib/java/jruby-complete.jar", "lib/java/swing-layout.jar", "lib/java/AbsoluteLayout.jar"]
+  c.java_lib_files = ["engine/lib/java/generated/bundled_gems.jar", "engine/lib/java/jruby-complete.jar", "interface/lib/swing-layout.jar", "interface/lib/AbsoluteLayout.jar"]                                                         
 
   # A list of directories for rawr to include . All files in the given directories get bundled up.
   # default value: ["lib/java"]
@@ -47,7 +47,7 @@ configuration do |c|
   # Undocumented option 'files_to_copy'
   # default value: []
   #
-  #c.files_to_copy = []
+  #c.files_to_copy = ["engine/config/db/development.db"]
 
   # Undocumented option 'target_jvm_version'
   # default value: 1.6
@@ -67,9 +67,8 @@ configuration do |c|
   # Undocumented option 'extra_user_jars'
   # default value: {}
   #
-  #c.extra_user_jars[:data] = { :directory => 'resources/medias',
+  #c.extra_user_jars[:images] = { :directory => 'interface/resources/medias',
   #                             :location_in_jar => 'medias'}
-  #                               :exclude => /*.bak$/
 
   # Undocumented option 'mac_do_not_generate_plist'
   # default value: nil

@@ -31,7 +31,6 @@ $LOAD_PATH << "lib" # Adding rubygems classes
   "commons",
   "models",
   "actions/controllers",
-  "actions/helpers",
   "actions/handlers"].each do |d|
   $LOAD_PATH << "app/#{d}"
 end
@@ -42,5 +41,10 @@ end
 # Application Initializer
 # 
 ####################################################################
-require File.dirname(__FILE__)+'/../system/initializers/init'
-require File.dirname(__FILE__)+"/../system/configuration"
+if IS_FROM_JAR then
+  require 'initializers/init'
+  require "initializers/configuration"
+else
+  require ROOT_DIR+'/engine/config/initializers/init'
+  require ROOT_DIR+"/engine/config/initializers/configuration"
+end

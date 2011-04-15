@@ -18,6 +18,7 @@ class FumoffuSourceGeneratorTest < Test::Unit::TestCase
           "engine/src/actions/handlers/application_handler.rb",
           "engine/src/commons",
           "engine/src/models",
+          "engine/test/spec/spec_helper.rb"
          ]
          check_files @dir_structure, @tmp_dir
       end

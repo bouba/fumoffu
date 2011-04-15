@@ -16,7 +16,7 @@ class FumoffuConfigGeneratorTest < Test::Unit::TestCase
             "engine/config/initializers/java_classes.rb",
             "engine/config/initializers/ruby_classes.rb",
             "engine/config/tasks/generator.rake",
-            "engine/config/tasks/package.rake "   
+            "engine/config/tasks/package.rake "
            ]
            check_files @dir_structure, @tmp_dir
         end

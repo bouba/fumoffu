@@ -9,7 +9,6 @@ module FumoffuTestHelper
     def setup
       @tmp_dir = ROOT_DIR+"/tmp"
       mkdir_p @tmp_dir, :verbose => false
-
       Fumoffu::Application.app_dir = @tmp_dir
     end
 

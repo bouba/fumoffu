@@ -19,12 +19,11 @@ class FumoffuGeneratorTest < Test::Unit::TestCase
           "engine/src/actions/handlers",
           "engine/src/commons",
           "engine/src/models",
-          "engine/test/spec",
+          "engine/test/spec/spec_helper.rb",
           "interface/src/org/rubyforge/rawr",
           "interface/test",
          ]
          check_files @dir_structure, @tmp_dir
-
       end
     end
 end
