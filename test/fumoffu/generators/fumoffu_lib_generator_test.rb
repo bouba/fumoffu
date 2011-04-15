@@ -9,12 +9,10 @@ class FumoffuLibGeneratorTest < Test::Unit::TestCase
         Fumoffu::Generators::Lib.generate
         #we check that all the directories have been created
         @dir_structure = [
-          "lib",
-          "lib/java",
-          "lib/java/generated",
-          "lib/java/AbsoluteLayout.jar",
-          "lib/java/swing-layout.jar",
-          "lib/ruby"
+          "engine/lib/java",
+          "engine/lib/ruby",
+          "interface/lib/AbsoluteLayout.jar",
+          "interface/lib/SwingLayout.jar",
          ]
          check_files @dir_structure, @tmp_dir
       end

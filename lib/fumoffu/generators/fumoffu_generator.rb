@@ -15,11 +15,12 @@ module Fumoffu
          # We generate the sources from where it is executed
          @dir_structure = [
            "dist",
-           "log",
-           "resources/medias",
+           "engine/log",
+           "engine/resources",
+           "interface/resources/medias",
            "scripts",
-           "test/java",
-           "test/ruby/spec"
+           "interface/test",
+           "engine/test/spec"
            ]
            
          @dir_structure.each do |dir|
