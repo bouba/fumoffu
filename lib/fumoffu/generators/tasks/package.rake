@@ -45,7 +45,7 @@ namespace :fumoffu do
       puts "Done"
 
       # we create the jar in the package dir
-      dependencies = "#{ROOT_DIR}/lib/java/generated/"
+      dependencies = "#{ROOT_DIR}/engine/lib/java/generated/"
 
       puts "Create the bundled gem jar"
       sh "jar cvf bundled_gems.jar -C #{BUILD_DIR} ."
