@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{fumoffu}
-  s.version = "0.0.2"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Lionel Abderemane"]
-  s.date = %q{2011-02-24}
+  s.date = %q{2011-04-18}
   s.default_executable = %q{fumoffu}
   s.description = %q{I will make the description later}
   s.email = %q{alionel@gmail.com}
@@ -32,31 +32,33 @@ Gem::Specification.new do |s|
     "lib/fumoffu/generators/fumoffu_generator.rb",
     "lib/fumoffu/generators/fumoffu_lib_generator.rb",
     "lib/fumoffu/generators/fumoffu_src_generator.rb",
+    "lib/fumoffu/generators/tasks/generator.rake",
     "lib/fumoffu/generators/tasks/install.rake",
     "lib/fumoffu/generators/tasks/package.rake",
     "lib/fumoffu/generators/templates/Gemfile",
     "lib/fumoffu/generators/templates/Rakefile",
     "lib/fumoffu/generators/templates/build_configuration.rb",
-    "lib/fumoffu/generators/templates/lib/java/AbsoluteLayout.jar",
-    "lib/fumoffu/generators/templates/lib/java/swing-layout.jar",
+    "lib/fumoffu/generators/templates/engine/config/initializers/app_classes.rb",
+    "lib/fumoffu/generators/templates/engine/config/initializers/configuration.rb",
+    "lib/fumoffu/generators/templates/engine/config/initializers/init.rb",
+    "lib/fumoffu/generators/templates/engine/config/initializers/java_classes.rb",
+    "lib/fumoffu/generators/templates/engine/config/initializers/ruby_classes.rb",
+    "lib/fumoffu/generators/templates/engine/src/actions/controllers/application_controller.rb",
+    "lib/fumoffu/generators/templates/engine/src/actions/handlers/application_handler.rb",
+    "lib/fumoffu/generators/templates/engine/src/main.rb",
+    "lib/fumoffu/generators/templates/engine/src/setup.rb",
+    "lib/fumoffu/generators/templates/engine/test/spec/spec_helper.rb",
+    "lib/fumoffu/generators/templates/interface/lib/AbsoluteLayout.jar",
+    "lib/fumoffu/generators/templates/interface/lib/SwingLayout.jar",
+    "lib/fumoffu/generators/templates/interface/src/org/github/bouba/fumoffu/ActionManager.java",
+    "lib/fumoffu/generators/templates/interface/src/org/github/bouba/fumoffu/UIActions.java",
+    "lib/fumoffu/generators/templates/interface/src/org/rubyforge/rawr/Main.java",
     "lib/fumoffu/generators/templates/scripts/package.sh",
     "lib/fumoffu/generators/templates/scripts/start.sh",
-    "lib/fumoffu/generators/templates/src/java/org/github/bouba/fumoffu/ActionManager.java",
-    "lib/fumoffu/generators/templates/src/java/org/github/bouba/fumoffu/UIActions.java",
-    "lib/fumoffu/generators/templates/src/java/org/rubyforge/rawr/Main.java",
-    "lib/fumoffu/generators/templates/src/ruby/app/actions/controllers/application_controller.rb",
-    "lib/fumoffu/generators/templates/src/ruby/app/actions/handlers/application_handler.rb",
-    "lib/fumoffu/generators/templates/src/ruby/app/main.rb",
-    "lib/fumoffu/generators/templates/src/ruby/app/setup.rb",
-    "lib/fumoffu/generators/templates/src/ruby/app/utils/component_search.rb",
-    "lib/fumoffu/generators/templates/src/ruby/config/configuration.rb",
-    "lib/fumoffu/generators/templates/src/ruby/config/initializers/app_classes.rb",
-    "lib/fumoffu/generators/templates/src/ruby/config/initializers/init.rb",
-    "lib/fumoffu/generators/templates/src/ruby/config/initializers/java_classes.rb",
-    "lib/fumoffu/generators/templates/src/ruby/config/initializers/ruby_classes.rb",
     "lib/fumoffu/handler.rb",
     "lib/fumoffu/java_mapping.rb",
     "lib/fumoffu/utils/component_search.rb",
+    "tasks/rawr_bundle.rake",
     "test/coverage/index.html",
     "test/coverage/jquery-1.3.2.min.js",
     "test/coverage/jquery.tablesorter.min.js",

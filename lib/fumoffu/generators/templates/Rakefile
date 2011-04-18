@@ -26,7 +26,7 @@ require 'rspec/core/rake_task'
 require 'yaml'
 
 Rake::RDocTask.new do |rdoc|
-  files =['README', 'LICENSE', 'lib/**/*.rb']
+  files =['README', 'LICENSE', 'engine/lib/**/*.rb']
   rdoc.rdoc_files.add(files)
   rdoc.main = "README" # page to start on
   rdoc.title = "Your project Docs"
@@ -35,7 +35,7 @@ Rake::RDocTask.new do |rdoc|
 end
 
 Rake::TestTask.new do |t|
-  t.test_files = FileList['test/**/*.rb']
+  t.test_files = FileList['engine/test/**/*.rb']
 end
 
 #RSpec::Core::RakeTask.new do |t|
@@ -45,7 +45,7 @@ end
 
 desc "Launch rspec tests"
 task :spec do
-  sh "jruby -S spec test/ruby/spec/ -c"
+  puts "Not working !!! use `jruby -S spec engine/test/spec/ -c` in a terminal "
 end
 # Setup default global constant
 env ||= ENV['env']
@@ -53,6 +53,7 @@ env = "development" unless env
 
 APP_ENV = env
 ROOT_DIR = File.dirname(__FILE__)
+IS_FROM_JAR = false
 
 # import custom rake tasks
-Dir.glob(File.dirname(__FILE__)+"/config/tasks/*.rake").each {|file| import file }
+Dir.glob(File.dirname(__FILE__)+"/engine/config/tasks/*.rake").each {|file| import file }

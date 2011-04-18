@@ -34,6 +34,11 @@ optparse = OptionParser.new do|opts|
          options[:bundle] = format
   end
 
+  options[:dependencies] = false
+  opts.on("-d", "--dependencies", "Download and install the dependencies") do
+    options[:dependencies] = true
+  end
+
   # This displays the help screen, all programs are
   # assumed to have this option.
   opts.on( '-h', '--help', 'Display this screen' ) do
@@ -43,6 +48,17 @@ optparse = OptionParser.new do|opts|
 end
 
 optparse.parse!
+
+def jruby_jar
+  # we check if the jruby jar is in the libs if not we download it
+  if not File.exist? Fumoffu::Application.app_dir+"/interface/lib/java/jruby-complete.jar" then
+    puts "We download the last stable version of jruby-complete jar..."
+    sh "rake -f #{File.dirname(__FILE__)}/../tasks/rawr_bundle.rake rawr:get:current-stable-jruby"
+    sh "mv #{Fumoffu::Application.app_dir}/lib/java/jruby-complete.jar #{Fumoffu::Application.app_dir}/interface/lib"
+    sh "rmdir #{Fumoffu::Application.app_dir}/lib/java"
+    sh "rmdir #{Fumoffu::Application.app_dir}/lib"
+  end
+end
 
 begin
   if options[:install] then
@@ -58,7 +74,7 @@ begin
     # we add the missing gems
     puts "Installing default packages ..."
     Dir.chdir project_dir do 
-      sh "bundle install"
+      sh "bundle install --path engine/lib/ruby"
     end
     exit
   end
@@ -66,11 +82,7 @@ begin
   if not options[:bundle].nil? 
     if bundle_format.include? options[:bundle].to_sym then
       task = nil
-      # we check if the jruby jar is in the libs if not we download it
-      if not File.exist? Fumoffu::Application.app_dir+"/lib/java/jruby-complete.jar" then
-        puts "We download the last stable version of jruby-complete jar..."
-        sh "rake -f #{File.dirname(__FILE__)}/../tasks/rawr_bundle.rake rawr:get:current-stable-jruby"
-      end
+      jruby_jar
       if options[:bundle] == :jar
         task = "rawr:jar"
       else
@@ -81,6 +93,11 @@ begin
     end
   end
   
+  if options[:dependencies] then
+    jruby_jar
+    exit
+  end
+
   puts "Invalid command line."
 end
 #
