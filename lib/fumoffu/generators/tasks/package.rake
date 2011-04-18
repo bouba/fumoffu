@@ -1,10 +1,8 @@
 require "rubygems"
 
-
 BUILD_DIR="build" # the directory used for the compilation
-TARGET_DIRS=[ "lib", "config"] # The list of folders containing the sources that require compilation
-GEM_DIR="#{ROOT_DIR}/lib/ruby/jruby/1.8/gems"
-JRUBY_COMPLETE="#{ROOT_DIR}/lib/java/jruby-complete.jar"
+GEM_DIR="#{ROOT_DIR}/engine/lib/ruby/jruby/1.8/gems"
+JRUBY_COMPLETE="#{ROOT_DIR}/engine/lib/java/jruby-complete.jar"
 
 def create_dir dir
   if File.exist?(dir) then 
@@ -13,17 +11,6 @@ def create_dir dir
     sh "mkdir #{dir}";
     puts dir+" has been created"
   end
-end
-
-def setup_other_files dir
-  # we copy the resources and dependencies
-  puts "Copy the resources and dependencies"
-  create_dir "#{dir}/config"
-  create_dir "#{dir}/log"
-  
-  sh "cp -R config/*.yml #{dir}/config/"
-  sh "cp -R config/templates #{dir}/config/"
-  sh "cp scripts/start.sh #{dir}/start.sh"
 end
 
 namespace :fumoffu do
@@ -59,16 +46,6 @@ namespace :fumoffu do
   task "clean" do
     puts "Cleaning up the build directory"
     sh "rm -Rf #{BUILD_DIR}/"
-    puts "Done ..."
-  end
-
-  desc "Install external dependencies"
-  task "install" do
-    puts "Install the PDF utility for Mac OSX"
-    sh "curl -O http://wkhtmltopdf.googlecode.com/files/wkhtmltopdf-0.9.9-OS-X.i368"
-    mkdir_p "resources/tools"
-    sh "mv wkhtmltopdf-0.9.9-OS-X.i368 resources/tools/wkhtmltopdf"
-    sh "chmod +x resources/tools/wkhtmltopdf"
     puts "Done ..."
   end
 end
