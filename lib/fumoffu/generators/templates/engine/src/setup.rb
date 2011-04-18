@@ -32,7 +32,7 @@ $LOAD_PATH << "lib" # Adding rubygems classes
   "models",
   "actions/controllers",
   "actions/handlers"].each do |d|
-  $LOAD_PATH << "app/#{d}"
+  $LOAD_PATH << "#{d}"
 end
 
 

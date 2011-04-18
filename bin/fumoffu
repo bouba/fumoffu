@@ -51,12 +51,13 @@ optparse.parse!
 
 def jruby_jar
   # we check if the jruby jar is in the libs if not we download it
-  if not File.exist? Fumoffu::Application.app_dir+"/interface/lib/java/jruby-complete.jar" then
-    puts "We download the last stable version of jruby-complete jar..."
-    sh "rake -f #{File.dirname(__FILE__)}/../tasks/rawr_bundle.rake rawr:get:current-stable-jruby"
-    sh "mv #{Fumoffu::Application.app_dir}/lib/java/jruby-complete.jar #{Fumoffu::Application.app_dir}/interface/lib"
-    sh "rmdir #{Fumoffu::Application.app_dir}/lib/java"
-    sh "rmdir #{Fumoffu::Application.app_dir}/lib"
+  if not File.exist? Fumoffu::Application.app_dir+"/interface/lib/jruby-complete.jar" then
+    puts "You do not have JRuby Complete jar file in 'Fumoffu::Application.app_dir+\"/interface/lib/jruby-complete.jar\"'. Please download the JRuby Complete version 1.5.6 at http://www.jruby.org/download"
+  #  puts "We download the last stable version of jruby-complete jar..."
+  #  sh "rake -f #{File.dirname(__FILE__)}/../tasks/rawr_bundle.rake rawr:get:current-stable-jruby"
+  #  sh "mv #{Fumoffu::Application.app_dir}/lib/java/jruby-complete.jar #{Fumoffu::Application.app_dir}/interface/lib"
+  #  sh "rmdir #{Fumoffu::Application.app_dir}/lib/java"
+  #  sh "rmdir #{Fumoffu::Application.app_dir}/lib"
   end
 end
 

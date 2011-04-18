@@ -20,7 +20,7 @@ def import_from_jar
 end
 
 def import_for_ruby
-  lib_dir = ROOT_DIR+"/src/ruby/app"
+  lib_dir = ROOT_DIR+"/engine/src"
 
   dirs = [
     "utils",
