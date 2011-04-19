@@ -11,7 +11,7 @@ if dir.size > 0 then
   ROOT_DIR = dir[0][0].scan(/file:(.+)/)[0][0]
 else
   IS_FROM_JAR = false
-  ROOT_DIR = "#{Pathname.new(__FILE__).dirname}/../../../"
+  ROOT_DIR = "#{Pathname.new(__FILE__).dirname}/../../"
 end
 puts "ROOT_DIR: #{ROOT_DIR}"
 ### Setup the application running environment

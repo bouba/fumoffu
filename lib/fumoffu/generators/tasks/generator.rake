@@ -35,7 +35,7 @@ namespace :fumoffu do
 
       file_content = "class #{name.split("_").collect{|n|n.capitalize!}.join} < ApplicationController\nend"
 
-      generate_file name, "#{Fumoffu::Application.app_dir}/src/ruby/app/actions/controllers", file_content
+      generate_file name, "#{Fumoffu::Application.app_dir}/engine/src/actions/controllers", file_content
       puts "The new controller #{name} has been generated."
     end
 
@@ -46,7 +46,7 @@ namespace :fumoffu do
       file_content = "class #{name.split("_").collect{|n|n.capitalize!}.join} < Fumoffu::Handler\n"
       file_content<< "    def initialize\n"
       file_content<< "      super\n"
-      file_content<< "      @controllers[UIActions::SAMPLE_ACTION] = SampleActionController.new\n"
+      file_content<< "      @controller = SampleActionController.new\n"
       file_content<< "    end\n\n\n"
       file_content<< "    def handleAction evt, action, caller\n"
       file_content<< "      # sample of use\n"
@@ -58,7 +58,7 @@ namespace :fumoffu do
       file_content<< "    end\n"
       file_content<< "end\n"
 
-      generate_file name, "#{Fumoffu::Application.app_dir}/src/ruby/app/actions/handlers", file_content
+      generate_file name, "#{Fumoffu::Application.app_dir}/engine/src/actions/handlers", file_content
       puts "The new handler #{name} has been generated."
     end
   end
