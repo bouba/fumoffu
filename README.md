@@ -4,9 +4,14 @@ Lionel Abderemane aka Bouba
 
 http://github.com/bouba/fumoffu
 
-I just started a month ago so the whole thing is still pretty fresh and VERY unstable ^_^.
+The current version of fumoffu has changed quite a bit. It is still "fresh" but I believe that the structure
+is much better and easier to understand. I still have not found a satisfactory way to run the tests. 
 
-So I hope you will be able to enjoy it. I will try may best documenting the project progressively.
+But I think I manage to improve the way the application is packaged.
+
+Fumoffu is now released as a gem. So you may find it on [Rubygem](https://rubygems.org/gems/fumoffu) website
+
+So I hope you will be able to enjoy it.
 
 ## Description
 
@@ -25,15 +30,23 @@ You can see a tutorial of a sample application made with this framework [here](h
 
 ## Installation
 
--   **Setup your [JRuby][jruby] environment**
+### From gem
 
-    _First download and install [JRuby][jruby] if do not have it_  
+    gem i fumoffu
+
+### From sources
+
+**Setup your [JRuby][jruby] environment**
+
+First download and install [JRuby][jruby] if do not have it
+
 __On a terminal__  
+
 To load your [JRuby][jruby] environment in a terminal just make a quick export  
 
       export PATH=/your/local/path/jruby-X.X.X/bin:$PATH
 
--   **Download and setup the Fumoffu gem**
+Download and setup the Fumoffu gem
 
     _Since I still did put the gem on ruby forge to install it you to download and generate the gem manually to install it_  
 
@@ -43,49 +56,10 @@ To load your [JRuby][jruby] environment in a terminal just make a quick export
         bundle install
         rake install
         cd pkg
-        gem i fumoffu-0.0.1.gem --local
-
-
--   **Setup your project files**
-
-    New project install the gem.  
-Then create a new project
-
-      mkdir MyApp
-      cd MyApp
-      fumoffu -i
-
-   Switch the boolean in the rake file to enable the rawr tasks then execute
-
-      rake rawr:get:current-stable-jruby
-
--   **Setup your IDE**
-
-    Currently this step is still in my opinion it is still way too complicated to do.  
-(I personally use Netbeans.)  
-
-    Here is the basic idea of how I setup my development environment.  
-I create 2 Projects:  
-  
-    * A Java Project
-    * A Ruby Project (where I switch the compiler to JRuby and add the root folder to the sources to be 
-    able to access to my Rake tasks using my IDE)  
-  
-_I think will make a video or something regarding the IDE setup, until I script the setup._
+        gem i fumoffu-0.1.0.gem --local
 
 
 * * *
-## Packaging
 
-To package your application first you need to create a jar of all the bundled
-
-
-    bundle install --path lib/ruby
-    rake fumoffu:bundler:jar
-    fumoffu -b jar
-    rake rawr:bundle:app
-
-
-Then configure the rake file in config/tasks/package.rake
-
+Tutorial to setup your project are available [here](http://github.com/bouba/fumoffu_example).
 [jruby]: http://jruby.org/download "[JRuby][jruby]"
