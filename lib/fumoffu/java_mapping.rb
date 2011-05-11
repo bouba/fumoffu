@@ -1,11 +1,24 @@
-# ####################################
-# CUSTOM CLASSES
-# ####################################
-
 #
-# Object and Classes are overidden to make it easier for to
+# Object is overidden to make it easier for to
 # exchange data between the Java accessor and Ruby accessor
+# We base the accessor method on the Ruby and Java standard
 #
+# ex: You need to use same object on the Java and Ruby layers
+# in order to access the object attribute the Ruby way.
+#
+# ex:
+#   // Class in Java
+#   public class Post {
+#     private String content;
+#     public String getContent(){return this.content;}
+#     public void setContent(final String content){this.content = content;}
+#   }
+# 
+#   // Class in Ruby
+#   class Post
+#     attr_java :content
+#   end
+# 
 
 class Object
   def self.attr_java(*args)

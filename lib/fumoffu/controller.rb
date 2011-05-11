@@ -1,7 +1,11 @@
 module Fumoffu
+  
+=begin rdoc
+  Controller is the layer which process the information.
+=end
   class Controller
-    attr_accessor :action_name
-    attr_reader :controller_name
+    # Used when generating a new controller
+    attr_reader :controller_name 
 
     def initialize
       @controller_name = extract_controller_name

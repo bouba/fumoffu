@@ -5,10 +5,13 @@ module Fumoffu
     include Fumoffu::Utils::ComponentSearch
   
     def initialize
-      @controllers = Hash.new
     end
 
-    # This method must be overidden
+    # This method must be overidden  
+    # The application handler will delegate the event handling to other handlers
+    # through this method.  
+    #
+    # This method enable the handler to catch the events
     def handleAction evt, action, caller
        # DO NOTHING - this method shall be implemented by the children
        return false

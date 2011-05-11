@@ -1,4 +1,8 @@
 module Fumoffu
+  
+=begin rdoc
+  This mo
+=end
   module Generators
      class Configuration
        # :call-seq:
@@ -17,7 +21,7 @@ module Fumoffu
           mkdir_p "#{Fumoffu::Application.app_dir}/engine", :verbose => false
           mkdir_p "#{Fumoffu::Application.app_dir}/engine/config", :verbose => false
           
-          self.generate_engine
+          self.generate_initializers
           mkdir_p "#{Fumoffu::Application.app_dir}/engine/config/tasks", :verbose => false
           
           # We include the default files
@@ -31,7 +35,7 @@ module Fumoffu
        
        protected
        
-       def self.generate_engine
+       def self.generate_initializers
           source_dir = File.dirname(__FILE__)+"/templates"
           # We generate the containers
           init_dir = "#{Fumoffu::Application.app_dir}/engine/config/initializers"

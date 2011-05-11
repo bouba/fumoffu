@@ -5,7 +5,14 @@
 # See LEGAL and LICENSE for additional licensing information.
 #
 
-# A script that will pretend to resize a number of images
+=begin rdoc
+  This script is the command line of the application that enable user to do the following
+  
+  * Generate the skeleton of the framework 
+  * Package the application for distribution
+  
+  use the --help for information on the available options
+=end
 require 'optparse'
 require 'rubygems'
 require 'fumoffu'
@@ -39,8 +46,6 @@ optparse = OptionParser.new do|opts|
     options[:dependencies] = true
   end
 
-  # This displays the help screen, all programs are
-  # assumed to have this option.
   opts.on( '-h', '--help', 'Display this screen' ) do
     puts opts
     exit
@@ -53,11 +58,6 @@ def jruby_jar
   # we check if the jruby jar is in the libs if not we download it
   if not File.exist? Fumoffu::Application.app_dir+"/interface/lib/jruby-complete.jar" then
     puts "You do not have JRuby Complete jar file in '#{Fumoffu::Application.app_dir}/interface/lib/jruby-complete.jar'. Please download the JRuby Complete version 1.5.6 at http://www.jruby.org/download"
-  #  puts "We download the last stable version of jruby-complete jar..."
-  #  sh "rake -f #{File.dirname(__FILE__)}/../tasks/rawr_bundle.rake rawr:get:current-stable-jruby"
-  #  sh "mv #{Fumoffu::Application.app_dir}/lib/java/jruby-complete.jar #{Fumoffu::Application.app_dir}/interface/lib"
-  #  sh "rmdir #{Fumoffu::Application.app_dir}/lib/java"
-  #  sh "rmdir #{Fumoffu::Application.app_dir}/lib"
   end
 end
 
@@ -101,9 +101,3 @@ begin
 
   puts "Invalid command line."
 end
-#
-# Sample to handle argument
-#
-#ARGV.each do|f|
-# puts "Resizing image #{f}..."
-#end
